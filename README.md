@@ -1,7 +1,7 @@
 # NodePlayer.js
 Pure JavaScrip live stream player
 
-## 特性
+## 愿景
 - 仅支持WebSocket的传输协议
 - 仅支持Flv封装
 - 首屏启动低于500毫秒，延迟低于2秒
