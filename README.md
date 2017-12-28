@@ -14,3 +14,12 @@ Pure JavaScrip live stream player
 
 ## 支持的服务端
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
+
+
+## 开发历程
+ - [x] WebSocket网络传输
+ - [ ] FLV解析
+ - [ ] 音频解码与播放
+ - [ ] 视频解码与渲染
+ - [ ] 兼容性测试
+ - [ ] 性能优化
