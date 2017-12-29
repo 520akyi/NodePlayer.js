@@ -9,8 +9,6 @@ Pure JavaScrip live stream player
 - 支持AAC/MP3/Speex/NellyMoser 音频软解码
 - 支持iOS/Android原生浏览器或WebView控件
 - 支持微信、QQ内部打开
-- 基于WebGL的视频渲染
-- 基于OpenAL的音频播放
 
 ## 支持的服务端
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
