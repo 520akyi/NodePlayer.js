@@ -1,5 +1,5 @@
 # NodePlayer.js
-Pure JavaScrip live stream player, 100% written in c++.
+Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 
 ## 特性
 - 仅支持WebSocket的传输协议
