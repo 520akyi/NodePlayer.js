@@ -1,7 +1,7 @@
 # NodePlayer.js
-Pure JavaScrip live stream player
+Pure JavaScrip live stream player, 100% written in c++.
 
-## 愿景
+## 特性
 - 仅支持WebSocket的传输协议
 - 仅支持Flv封装
 - 首屏启动低于500毫秒，延迟低于2秒
@@ -16,11 +16,10 @@ Pure JavaScrip live stream player
 ## 支持的服务端
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
 
-
 ## 开发历程
  - [x] WebSocket网络传输
  - [x] FLV解析
  - [x] 音频解码与播放
- - [ ] 视频解码与渲染
+ - [x] 视频解码与渲染
  - [ ] 兼容性测试
  - [ ] 性能优化
