@@ -31,7 +31,7 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 - 全解码版js小于3M
 
 ## 问题
-iOS微信内无声，但QQ内有
+iOS微信内无声，但QQ内有  
 解码性能低下，如何开启ffmpeg的SIMD
 
 ## 支持的服务端
