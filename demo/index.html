@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+  <style>
+    #url {
+      width: 580px;
+    }
+
+    #log {
+      width: 640px;
+      height: 200px;
+      margin-top: 10px;
+      border-left: 0px;
+      border-right: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+      display: block;
+      background-color: black;
+      color: white;
+      font-size:medium;
+      font-family: 'Lucida Console', Monaco, monospace;
+      outline: none;
+    }
+  </style>
+</head>
+<script src="NodePlayer.js"></script>
+<script>
+  window.onload = function () {
+    var url = document.getElementById("url");
+    var button = document.getElementById("play");
+    var logview = document.getElementById("log");
+
+    Module.print = (text) => {
+      logview.innerHTML = logview.innerHTML + text + "\n";
+
+    };
+
+    Module.printErr = (text) => {
+      logview.innerHTML = logview.innerHTML + text + "\n";
+    };
+
+    var np = new Module.NodePlayer();
+    var isStarting = false;
+    np.on('start', () => {
+      console.log('NodePlayer on start');
+    });
+    np.on('close', () => {
+      console.log('NodePlayer on close');
+    });
+    np.on('error', () => {
+      console.log('NodePlayer on error');
+    });
+    np.setPlayView('video');
+    np.setScaleMode(1);
+    var playback = function (event) {
+      if (isStarting) {
+        np.stop();
+        button.value = "start";
+        isStarting = false;
+      } else {
+        np.start(url.value);
+        button.value = "stop";
+        isStarting = true;
+      }
+    }
+
+    if (button.addEventListener) {
+      button.addEventListener("click", playback, false);
+    } else if (button.attachEvent) {
+      button.attachEvent('onclick', playback);
+    }
+
+  };
+
+</script>
+
+<body>
+  <h1>NodePlayer.js</h1>
+  <div>
+    <div>Simple Live Stream player in pure JavaScript.</div>
+    <canvas id="video" width=640 height=480></canvas>
+  </div>
+  <input id="url" value="ws://192.168.0.10/live/stream.flv" />
+  <input id="play" type="button" value="Play" />
+  <br />
+  <textarea id="log" rows="8"></textarea>
+</body>
+
+</html>
