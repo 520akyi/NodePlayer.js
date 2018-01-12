@@ -46,3 +46,5 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
  
 ## 截图比较
 ![img](https://github.com/illuspas/NodePlayer.js/blob/master/nodeplayerjs_flvjs.png)
+
+![img](https://github.com/illuspas/NodePlayer.js/blob/master/wechat_desktop.jpg)
