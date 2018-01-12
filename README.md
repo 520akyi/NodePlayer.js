@@ -43,3 +43,6 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
  - [x] 视频解码与渲染
  - [ ] 兼容性测试
  - [ ] 性能优化
+ 
+## 截图比较
+![img](https://github.com/illuspas/NodePlayer.js/blob/master/nodeplayerjs_flvjs.png)
