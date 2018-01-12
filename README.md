@@ -29,6 +29,7 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 - 视频渲染 WebGL
 - 音频播放 WebAudio
 - 全解码版js小于3M
+- 支持平铺，等比缩放，拉伸填充的视频缩放模式
 
 ## 问题
 解码性能低下，如何开启ffmpeg的SIMD
