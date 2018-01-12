@@ -4,7 +4,7 @@
 <head>
   <style>
     #url {
-      width: 580px;
+      width: 350px;
     }
 
     #log {
@@ -18,7 +18,7 @@
       display: block;
       background-color: black;
       color: white;
-      font-size:medium;
+      font-size: medium;
       font-family: 'Lucida Console', Monaco, monospace;
       outline: none;
     }
@@ -30,7 +30,8 @@
     var url = document.getElementById("url");
     var button = document.getElementById("play");
     var logview = document.getElementById("log");
-
+    var audioCB = document.getElementById("audioCB");
+    var videoCB = document.getElementById("videoCB");
     Module.print = (text) => {
       logview.innerHTML = logview.innerHTML + text + "\n";
 
@@ -43,16 +44,18 @@
     var np = new Module.NodePlayer();
     var isStarting = false;
     np.on('start', () => {
-      console.log('NodePlayer on start');
+      Module.print('NodePlayer on start');
     });
     np.on('close', () => {
-      console.log('NodePlayer on close');
+      Module.print('NodePlayer on close');
     });
-    np.on('error', () => {
-      console.log('NodePlayer on error');
+    np.on('error', (err) => {
+      Module.print('NodePlayer on error',err);
     });
     np.setPlayView('video');
     np.setScaleMode(1);
+    np.enableVideo(videoCB.checked);
+    np.enableAudio(audioCB.checked);
     var playback = function (event) {
       if (isStarting) {
         np.stop();
@@ -65,11 +68,32 @@
       }
     }
 
+    var audioChange = function () {
+      np.enableAudio(audioCB.checked);
+    }
+
+    var videoChange = function () {
+      np.enableVideo(videoCB.checked);
+    }
+
     if (button.addEventListener) {
       button.addEventListener("click", playback, false);
     } else if (button.attachEvent) {
       button.attachEvent('onclick', playback);
     }
+
+    if (videoCB.addEventListener) {
+      videoCB.addEventListener("click", videoChange, false);
+    } else if (button.attachEvent) {
+      videoCB.attachEvent('onclick', videoChange);
+    }
+
+    if (audioCB.addEventListener) {
+      audioCB.addEventListener("click", audioChange, false);
+    } else if (audioCB.attachEvent) {
+      audioCB.attachEvent('onclick', audioChange);
+    }
+
 
   };
 
@@ -83,6 +107,10 @@
   </div>
   <input id="url" value="ws://192.168.0.10/live/stream.flv" />
   <input id="play" type="button" value="Play" />
+  <input type="checkbox" id="audioCB" value="enableAudio" />
+  <label for="enableAudio">enableAudio</label>
+  <input type="checkbox" id="videoCB" value="enableVideo" checked/>
+  <label for="enableVideo">enableVideo</label>
   <br />
   <textarea id="log" rows="8"></textarea>
 </body>
