@@ -32,7 +32,8 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 - 支持平铺，等比缩放，拉伸填充的视频缩放模式
 
 ## 问题
-解码性能低下，如何开启ffmpeg的SIMD
+解码性能低下，如何开启ffmpeg的SIMD  
+优化思路：Emscripten不能编译.S文件，也不支持inline SIMD assembly。但是支持C API的 SSE1, SSE2, SSE3, SSSE3指令集。对h264addpx_template.c,h264chroma_template.c, h264dsp_template.c, h264idct_template.c, h264pred_template.c, h264qpel_template.c 进行SIMD移植。AAC,HEVC解码器也是相同原理。
 
 ## 支持的服务端
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
