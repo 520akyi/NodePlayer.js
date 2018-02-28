@@ -6,7 +6,6 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 只使用到ffmpeg库的libavcodec，libavutil，libswresample库。  
 只编译了h264,hevc,mp3,aac,nellymoser解码器，因此也算比较小巧了。  
 最终-Os级编译出2.9M，经测试，基本兼容windows，linux，mac，android，ios。  
-如果只支持H264+AAC，体积可以做的非常小，1M左右。  
 视频渲染完全由WebGL实现，性能较其他js解码器的YUV转RGB更高。640x480@30 在iphone5s上能流畅播放。
 
 ## 用途
