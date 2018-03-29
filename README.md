@@ -8,6 +8,8 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 最终-Os级编译出2.9M，经测试，基本兼容windows，linux，mac，android，ios。  
 视频渲染完全由WebGL实现，性能较其他js解码器的YUV转RGB更高。640x480@30 在iphone5s上能流畅播放。
 
+2018/3/29 - 部分用过的同学觉得程序包太大了，我已经在考虑使用openh264+faad来实现，应该会小很多，或者只保留h.264解码器.
+
 ## 用途
 本项目是一个实验型的开发，只是证明，可以这么实现:joy:，实际用处或许不大。  
 唯二的优势或许是 iOS浏览器环境(包括微信和QQ)内低延迟(小于2秒)视频直播、能解hevc直播
