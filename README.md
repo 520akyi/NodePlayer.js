@@ -37,7 +37,7 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 优化思路：Emscripten不能编译.S文件，也不支持inline SIMD assembly。但是支持C API的 SSE1, SSE2, SSE3, SSSE3指令集。对h264addpx_template.c,h264chroma_template.c, h264dsp_template.c, h264idct_template.c, h264pred_template.c, h264qpel_template.c 进行SIMD移植。AAC,HEVC解码器也是相同原理。  
 官方文档说编译ARM NEON指令集(#include <arm_neon.h>)代码还不支持，但也可能行。   
 Intel有一个项目[ARM_NEON_2_x86_SSE](https://github.com/intel/ARM_NEON_2_x86_SSE) 是否可以考虑使用NEON的API进行移植开发，后期如果Emscripte开始支持NEON则可自动支持。  
-emscripten/vector.h 中直接映射了SIMD.js的API，根据[这篇介绍](https://hacks.mozilla.org/2014/10/introducing-simd-js/) ,应该是同时只支持X86平台的SSE和ARM平台的NEON指令集。那直接使用这个api来优化应该更好一点。
+emscripten/vector.h 中直接映射了SIMD.js的API，根据[这篇介绍](https://hacks.mozilla.org/2014/10/introducing-simd-js/) ,应该是同时支持X86平台的SSE和ARM平台的NEON指令集。那直接使用这个api来优化应该更好一点。
 
 ## 支持的服务端
 [Node-Media-Server](https://github.com/illuspas/Node-Media-Server)
