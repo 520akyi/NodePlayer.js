@@ -3,6 +3,7 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 
 ## 商用优化版
 http://www.nodemedia.cn/products/node-media-player/
+商用版现已支持http-flv
 
 ## 简介
 本项目使用emscripten技术，完全采用c++编写，最终编译为js代码。  
