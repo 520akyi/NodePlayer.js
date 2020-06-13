@@ -5,6 +5,7 @@ Pure JavaScrip live stream player, 100% written in c/c++. :joy:
 http://www.nodemedia.cn/products/node-media-player/
 * 商用版现已支持http-flv
 * 商用版现已支持wasm版本，性能提升一倍
+* 商用版现已支持播放RTMP
 
 ## 特性
 - 仅支持WebSocket的传输协议
